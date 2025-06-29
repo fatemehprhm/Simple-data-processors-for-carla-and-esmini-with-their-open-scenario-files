@@ -1,0 +1,17 @@
+build/
+log/
+install/
+data_env/
+carla-ros-bridge/
+iqz_data/
+setlabs_data/
+sample-rosbag/
+interface/
+output/
+*.csv
+*.odg
+setlabs_pkg/
+ros_msg/
+*.xlsx
+text_output/
+SIM_Design/

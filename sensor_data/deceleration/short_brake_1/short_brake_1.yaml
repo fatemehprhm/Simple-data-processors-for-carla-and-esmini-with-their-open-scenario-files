@@ -1,0 +1,42 @@
+--- Interface Specification
+  Identifier: SIM|MON
+  Description: This interface provides the information needed by WP-MON from WP-SIM
+
+  Type of maneuver: deceleration short-brake
+  Type of simulator: Esmini
+
+  Functional Scenario: In this scenario
+    Leading car performs as follow:
+        1- At the beginning of the scenario it has a constant speed of 16.66 m/s for 3 seconds.
+        2- For the next 1.5 seconds it decelerates gradually until it reaches the speed of 8.5 m/s.
+        3- Then it continues with this speed for 3 seconds.
+        4- At the end it gradually accelerate for 1.5 seconds to reach the speed of 16.66 m/s.
+        Note that the leading car acceleration varies between -5.45 and 5.45.
+    ALKS performs as follow:
+        1- At the beginning of the scenario it has a constant speed of 16.66 m/s for 4.78 seconds.
+        2- For the next 1.5 seconds it decelerates gradually until it reaches the speed of 12 m/s.
+        3- Then it continues with this speed for 4.1 seconds.
+        4- At the end it gradually accelerate for 1.5 seconds to reach the speed of 14 m/s.
+        Note that the ALKS acceleration varies between -3.1 and 1.35.
+  
+  List of topics: 
+    - Publishing to: /csv_data
+  Maneuver result: Failure
+    - Cause of failure: long Rtime time
+  Total length of the scenario in seconds: 16.08 s
+  Total length of the maneuver: 6.52 s
+  Time that maneuver strats: 4.36 s
+  Time that maneuver ends: 10.88 s
+  Timestep: 0.04 s
+
+  Observables:
+    - time: the time that each observable is recorded
+    - ego_speed: speed of ALKS
+    - ego_accel: acceleration of ALKS
+    - leading_accel: acceleration of leading vehicle
+    - distance: distance between leading vehicle rear and ALKS front
+
+
+
+
+

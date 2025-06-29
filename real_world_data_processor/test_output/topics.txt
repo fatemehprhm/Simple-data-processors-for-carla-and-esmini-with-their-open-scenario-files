@@ -1,0 +1,635 @@
+ok this topic only gives the info of surrounded objects, the info about the ego vehicle itself are these:
+from topic /sensing/gnss/pose_with_covariance:
+header:
+  stamp:
+    sec: 1687177945
+    nanosec: 600181885
+  frame_id: map
+pose:
+  pose:
+    position:
+      x: 583549.6913108433
+      y: 5806499.895666625
+      z: 71.47990061333641
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+  covariance:
+  - 0.066564
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.066564
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.159201
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+from topic /sensing/imu/imu_data:
+header:
+  stamp:
+    sec: 1687177937
+    nanosec: 547129217
+  frame_id: base_link
+orientation:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  w: 1.0
+orientation_covariance:
+- -1.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+angular_velocity:
+  x: 0.0
+  y: 0.0
+  z: 0.0032
+angular_velocity_covariance:
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+linear_acceleration:
+  x: 0.06
+  y: 0.23
+  z: -9.77
+linear_acceleration_covariance:
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+from topic /tf_static:
+header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: lidar_right/os_sensor
+  child_frame_id: lidar_right/os_lidar
+  transform:
+    translation:
+      x: 0.0
+      y: 0.0
+      z: 0.03618
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.9999999999991198
+      w: -1.3267948966775328e-06
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: sensor_kit_base_link
+  child_frame_id: lidar_right/os_sensor
+  transform:
+    translation:
+      x: -1.023
+      y: -0.581
+      z: -0.121
+    rotation:
+      x: 0.1782135244108039
+      y: 0.08213708176799826
+      z: -0.6680098202031943
+      w: 0.7178135688518384
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: lidar_top/os_sensor
+  child_frame_id: lidar_top/os_imu
+  transform:
+    translation:
+      x: 0.006253
+      y: -0.011775
+      z: 0.007645
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: lidar_top/os_sensor
+  child_frame_id: lidar_top/os_lidar
+  transform:
+    translation:
+      x: 0.0
+      y: 0.0
+      z: 0.03618
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.9999999999991198
+      w: -1.3267948966775328e-06
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: sensor_kit_base_link
+  child_frame_id: lidar_top/os_sensor
+  transform:
+    translation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: sensor_mount_rear_axis
+  child_frame_id: lrr_front_ars548
+  transform:
+    translation:
+      x: 3.74
+      y: 0.23
+      z: 0.305
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: sensor_mount_front
+  child_frame_id: lrr_front_continental
+  transform:
+    translation:
+      x: 0.0
+      y: 0.25
+      z: 0.295
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: sensor_mount_rear_axis
+  child_frame_id: lrr_front_umrr11
+  transform:
+    translation:
+      x: 3.74
+      y: -0.25
+      z: 0.295
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: sensor_mount_rear_axis
+  child_frame_id: lrr_rear_umrr11
+  transform:
+    translation:
+      x: -1.05
+      y: 0.0
+      z: 0.3
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.9999996829318346
+      w: 0.0007963267107332633
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: base_link
+  child_frame_id: sensor_kit_base_link
+  transform:
+    translation:
+      x: 1.595
+      y: 0.0
+      z: 1.66
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: base_link
+  child_frame_id: sensor_mount_front
+  transform:
+    translation:
+      x: 3.75
+      y: 0.0
+      z: 0.33
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: base_link
+  child_frame_id: sensor_mount_rear_axis
+  transform:
+    translation:
+      x: 0.0
+      y: 0.0
+      z: 0.33
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: sensor_mount_rear_axis
+  child_frame_id: srr_front_left
+  transform:
+    translation:
+      x: 3.465
+      y: 0.78
+      z: 0.27
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.5438347906836426
+      w: 0.8391923024206542
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: sensor_mount_rear_axis
+  child_frame_id: srr_front_right
+  transform:
+    translation:
+      x: 3.465
+      y: -0.78
+      z: 0.27
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: -0.5438347906836426
+      w: 0.8391923024206542
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: sensor_mount_rear_axis
+  child_frame_id: srr_rear_left
+  transform:
+    translation:
+      x: -0.515
+      y: 0.86
+      z: 0.205
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.7895037396899504
+      w: 0.6137457494888116
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 337582661
+    frame_id: sensor_mount_rear_axis
+  child_frame_id: srr_rear_right
+  transform:
+    translation:
+      x: -0.515
+      y: -0.86
+      z: 0.205
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: -0.7895037396899504
+      w: 0.6137457494888116
+---
+transforms:
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 156206281
+    frame_id: base_link
+  child_frame_id: wheel_fl
+  transform:
+    translation:
+      x: 2.85
+      y: 0.787
+      z: 0.33
+    rotation:
+      x: 0.39
+      y: 0.58
+      z: 0.58
+      w: -0.39
+---
+transforms:
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 153561170
+    frame_id: base_link
+  child_frame_id: wheel_rl
+  transform:
+    translation:
+      x: 0.0
+      y: 0.787
+      z: 0.33
+    rotation:
+      x: 0.39
+      y: 0.58
+      z: 0.58
+      w: -0.39
+---
+transforms:
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 196671412
+    frame_id: base_link
+  child_frame_id: wheel_fr
+  transform:
+    translation:
+      x: 2.85
+      y: -0.787
+      z: 0.33
+    rotation:
+      x: -0.68
+      y: -0.18
+      z: -0.18
+      w: 0.683
+---
+transforms:
+- header:
+    stamp:
+      sec: 1687177404
+      nanosec: 119165620
+    frame_id: wheel_fl
+  child_frame_id: steer_fl
+  transform:
+    translation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+
+from topic /tf:
+transforms:
+- header:
+    stamp:
+      sec: 1687177939
+      nanosec: 200185984
+    frame_id: map
+  child_frame_id: gnss_base_link
+  transform:
+    translation:
+      x: 583549.704538882
+      y: 5806499.918142522
+      z: 71.94490133205092
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+
+
+and it goes on with topics /vehicle/twist:
+header:
+  stamp:
+    sec: 1687177976
+    nanosec: 246110670
+  frame_id: base_link
+twist:
+  linear:
+    x: 6.172222137451172
+    y: 0.0
+    z: 0.0
+  angular:
+    x: 0.0
+    y: 0.0
+    z: -0.023243466126047458
+
+vehicle/imu/raw_data:
+header:
+  stamp:
+    sec: 1687177960
+    nanosec: 36865908
+  frame_id: base_link
+orientation:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  w: 1.0
+orientation_covariance:
+- -1.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+angular_velocity:
+  x: 0.0044
+  y: 0.0
+  z: 0.0068000000000000005
+angular_velocity_covariance:
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+linear_acceleration:
+  x: 1.95
+  y: 0.16
+  z: -9.84
+linear_acceleration_covariance:
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+
+/perception/object_recognition/detection/apollo/objects" which is like this:
+header:
+  stamp:
+    sec: 1687177955
+    nanosec: 342863000
+  frame_id: base_link
+objects:
+- existence_probability: 0.0
+  classification:
+  - classification: 1
+    probability: 3.5530924797058105
+  kinematics:
+    pose_with_covariance:
+      pose:
+        position:
+          x: 65.43544006347656
+          y: -0.21631503105163596
+          z: 1.5023104548454285
+        orientation:
+          x: 0.0
+          y: 0.0
+          z: -0.005293771113188856
+          w: 0.9999859878955311
+      covariance:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+    has_position_covariance: false
+    orientation_availability: 1
+    twist:
+      twist:
+        linear:
+          x: 0.0
+          y: 0.0
+          z: 0.0
+        angular:
+          x: 0.0
+          y: 0.0
+          z: 0.0
+      covariance:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+    has_twist: false
+    has_twist_covariance: false
+  shape:
+    polygon:
+      points: []
+    height: 0.0

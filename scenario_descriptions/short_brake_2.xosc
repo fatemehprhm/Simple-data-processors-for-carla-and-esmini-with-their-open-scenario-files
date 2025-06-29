@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSCENARIO>
+  <FileHeader revMajor="1" revMinor="0" date="2023-05-08T12:00:00" description="CARLA:FollowLeadingVehicle" author="Fatemeh Prhm"/>
+  <ParameterDeclarations>
+    <ParameterDeclaration name="LeadingSpeed" parameterType="double" value="16.66"/>
+    <ParameterDeclaration name="EgoSpeed" parameterType="double" value="16.66"/>
+    <ParameterDeclaration name="EgoS" parameterType="double" value="30"/>
+    <ParameterDeclaration name="DecelerateS" parameterType="double" value="70"/>
+    <ParameterDeclaration name="StartTime" parameterType="double" value="3.0"/>
+  </ParameterDeclarations>
+  <CatalogLocations>
+    <VehicleCatalog>
+        <Directory path="catalogs"/>
+    </VehicleCatalog>
+  </CatalogLocations>
+  <RoadNetwork>
+    <LogicFile filepath="../maps/straight_500m.xodr"/>
+    <SceneGraphFile filepath=""/>
+  </RoadNetwork>
+  <Entities>
+    <ScenarioObject name="hero">
+      <CatalogReference catalogName="VehicleCatalog" entryName="car_white"/>
+    </ScenarioObject>
+    <ScenarioObject name="adversary">
+      <CatalogReference catalogName="VehicleCatalog" entryName="car_red"/>
+    </ScenarioObject>
+  </Entities>
+  <Storyboard>
+    <Init>
+      <Actions>
+        <GlobalAction>
+          <EnvironmentAction>
+            <Environment name="Environment1">
+              <TimeOfDay animation="false" dateTime="2020-03-20T12:00:00"/>
+              <Weather cloudState="free">
+                <Sun intensity="0.85" azimuth="0" elevation="1.31"/>
+                <Fog visualRange="100000.0"/>
+                <Precipitation precipitationType="dry" intensity="0.0"/>
+              </Weather>
+              <RoadCondition frictionScaleFactor="1.0"/>
+            </Environment>
+          </EnvironmentAction>
+        </GlobalAction>
+        <Private entityRef="hero">
+          <PrivateAction>
+            <LongitudinalAction>
+              <SpeedAction>
+                <SpeedActionDynamics dynamicsShape="step" value="0.0" dynamicsDimension="time" />
+                <SpeedActionTarget>
+                  <AbsoluteTargetSpeed value="$EgoSpeed" />
+                </SpeedActionTarget>
+              </SpeedAction>
+            </LongitudinalAction>
+          </PrivateAction>
+          <PrivateAction>
+            <TeleportAction>
+              <Position>
+                <LanePosition roadId="1" laneId="-1" offset="0" s="$EgoS"/>
+              </Position>
+            </TeleportAction>
+          </PrivateAction>
+        </Private>
+        <Private entityRef="adversary">
+          <PrivateAction>
+            <LongitudinalAction>
+              <SpeedAction>
+                <SpeedActionDynamics dynamicsShape="step" value="0.0" dynamicsDimension="time" />
+                <SpeedActionTarget>
+                  <AbsoluteTargetSpeed value="$LeadingSpeed" />
+                </SpeedActionTarget>
+              </SpeedAction>
+            </LongitudinalAction>
+          </PrivateAction>
+          <PrivateAction>
+            <TeleportAction>
+              <Position>
+                <LanePosition roadId="1" laneId="-1" offset="0" s="$DecelerateS"/>
+              </Position>
+            </TeleportAction>
+          </PrivateAction>
+        </Private>
+      </Actions>
+    </Init>
+    <Story name="MyStory">
+      <Act name="Act1">
+        <ManeuverGroup name="leadingdeccelerate" maximumExecutionCount="1">
+          <Actors selectTriggeringEntities="false">
+            <EntityRef entityRef="adversary"/>
+          </Actors>
+          <Maneuver name="LeadingVehicleManeuver">
+            <Event name="LeadingVehicledecelerate" priority="overwrite">
+              <Action name="LeadingVehicledecelerate">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedProfileAction followingMode="follow">
+                        <DynamicConstraints
+                            maxAcceleration = "6"
+                            maxDeceleration = "6"
+                            maxAccelerationRate = "4"
+                            maxDecelerationRate = "4"
+                            maxSpeed = "17"
+                        />
+                        <SpeedProfileEntry time="0.0" speed="16.66"/>
+                        <SpeedProfileEntry time="1.5" speed="8.5"/>
+                        <SpeedProfileEntry time="3" speed="8.5"/>
+                        <SpeedProfileEntry time="1.5" speed="16.66"/>
+                    </SpeedProfileAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                  <ConditionGroup>
+                      <Condition name="EventTrigger1" delay="0" conditionEdge="none">
+                          <ByValueCondition>
+                              <SimulationTimeCondition value="$StartTime" rule="greaterOrEqual"/>
+                          </ByValueCondition>
+                      </Condition>
+                  </ConditionGroup>
+              </StartTrigger>
+            </Event>
+          </Maneuver>
+        </ManeuverGroup>
+        <ManeuverGroup name="EgoVehicleManeuver" maximumExecutionCount="1">
+          <Actors selectTriggeringEntities="false">
+              <EntityRef entityRef="hero"/>
+          </Actors>
+          <Maneuver name="EgoVehicleManeuver">
+              <Event name= "EgoVehicledecelerate" priority="overwrite">
+                  <Action name="EgoVehicledecelerate">
+                      <PrivateAction>
+                          <LongitudinalAction>
+                              <SpeedProfileAction followingMode="follow">
+                                  <DynamicConstraints
+                                      maxAcceleration = "6"
+                                      maxDeceleration = "6"
+                                      maxAccelerationRate = "4"
+                                      maxDecelerationRate = "4"
+                                      maxSpeed = "17"
+                                  />
+                                  <SpeedProfileEntry time="0.0" speed="16.66"/>
+                                  <SpeedProfileEntry time="1.5" speed="12"/>
+                                  <SpeedProfileEntry time="4.1" speed="12"/>
+                                  <SpeedProfileEntry time="1.5" speed="14"/>
+                              </SpeedProfileAction>
+                          </LongitudinalAction>
+                      </PrivateAction>
+                  </Action>
+                  <StartTrigger>
+                      <ConditionGroup>
+                          <Condition name="EventTrigger2" delay="0" conditionEdge="none">
+                              <ByValueCondition>
+                                  <SimulationTimeCondition value="5.5" rule="greaterOrEqual"/>
+                              </ByValueCondition>
+                          </Condition>
+                      </ConditionGroup>
+                  </StartTrigger>
+              </Event>
+          </Maneuver>
+        </ManeuverGroup>
+        <StartTrigger/>
+        <StopTrigger>
+            <ConditionGroup>
+                <Condition name="StopSimulationCondition" delay="0" conditionEdge="rising">
+                    <ByValueCondition>
+                        <SimulationTimeCondition value="16" rule="greaterThan"/>
+                    </ByValueCondition>
+                </Condition>
+            </ConditionGroup>
+        </StopTrigger>
+      </Act>
+    </Story>
+    <StopTrigger />
+  </Storyboard>
+</OpenSCENARIO>

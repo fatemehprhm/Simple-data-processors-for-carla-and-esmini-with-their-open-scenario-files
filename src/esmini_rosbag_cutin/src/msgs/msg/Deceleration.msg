@@ -1,0 +1,6 @@
+# Deceleration.msg
+float64 time
+float64 ego_speed
+float64 ego_acceleration
+float64 actor_acceleration
+float64 longituidinal_distance
